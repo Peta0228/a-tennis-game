@@ -21,6 +21,7 @@ class Game {
         this.players = players;
         this.scoreboard = 'Game Started';
         this.finished = false;
+        console.log('Game Started');
     }
     wonPoint(player) {
 
@@ -44,24 +45,30 @@ class Game {
         if (p1.pointsWon == 40 && p2.pointsWon < 40) {
             this.scoreboard = player.name + ' Won!';
             this.finished = true;
+            console.log(player.name, ' Won!');
+            return;
         }
 
         // currently, both players at 40
         else if (p1.pointsWon == 40 && p2.pointsWon == 40){
             player.pointsWon = 45;
             this.scoreboard = player.name + ' Advantage';
+            console.log(player.name, ' Advantage');
         }
 
         // currently, the other is at advantage
         else if (p2.pointsWon == 45) {
             p2.pointsWon = 40;
             this.scoreboard = 'Deuce';
+            console.log('Deuce');
         }
 
         // currently, the player is at advantage
         else if (p1.pointsWon == 45){
             this.scoreboard = player.name + ' Won!';
             this.finished = true;
+            console.log(player.name, ' Won!');
+            return;
         }
 
         if (player.pointsWon == 0) {
@@ -73,13 +80,21 @@ class Game {
         else if (player.pointsWon != 45) {
             player.pointsWon = 40;
         }
+
+        if (p1.getName() == 'player 1'){
+            console.log(p1.getName(), p1.getPointsWon(), p2.getName(), p2.getPointsWon());
+        }
+        else{
+            console.log(p2.getName(), p2.getPointsWon(), p1.getName(), p1.getPointsWon());
+        }
     }
 
     reset(){
         this.players[0].pointsWon = 0;
         this.players[1].pointsWon =0;
-        this.scoreboard = 'Game Started';
+        this.scoreboard = 'Game Reset';
         this.finished = false;
+        console.log('Game Reset');
     }
 
     GetScoreboard(){

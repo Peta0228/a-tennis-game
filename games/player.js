@@ -10,6 +10,10 @@ class Player {
     getPointsWon() {
         return this.pointsWon;
     }
+
+    getName(){
+        return this.name;
+    }
 }
 
 module.exports = Player;

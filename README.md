@@ -15,6 +15,8 @@ The following rules for the game are:
 
 4. If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is "Advantage" for the player in the lead.
 
+5.In this application, score '45' indicates a  'Advantage'.
+
 ## Techniques
 ### Front-end 
 * Bootstrap3
