@@ -23,11 +23,6 @@ The following rules for the game are:
 * NodeJS
 * Express
 
-## Choice of techniques
-No database (such as MongoDB) was included in this application, however, further development may require adding a database at the backend.
-
-The front-end technology was not up to date and may be upgraded in further development, using React should be a good choice.
-
 ## Prerequisites
     * NodeJS
     * nodemon (preferably) in global environment
@@ -40,3 +35,8 @@ The front-end technology was not up to date and may be upgraded in further devel
     * $ npm install
     * $ nodemon start
 The project should start at https://localhost/3000
+
+## Potential improvments
+No database (such as MongoDB) was included in this application, however, further development may require adding a database at the backend.
+
+The front-end technology was not up to date and may be upgraded in further development, using React should be a good choice.
