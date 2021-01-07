@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<head>
+  <% include partials/head %>
+</head>
+
+<body>
+  <% include partials/menu %>
+    <div class="container-fluid bg-3 text-center">
+      <h3>
+        <%= page %>
+      </h3><br>
+      <div class="row">
+        <div> player 1 </div>
+        <div>
+          <p>
+            <%= player1Score %>
+          </p>
+        </div>
+        <div> player 2 </div>
+        <div>
+          <p>
+            <%= player2Score %>
+          </p>
+        </div>
+        <div><%= scoreboard %>!</div>
+
+        <button id="button1" type='submit' onClick="window.location.reload()" >Player 1 scored</button>
+        <button id="button2" type="submit" onClick="window.location.reload()" >Player 2 scored</button>
+        <button id="buttonRes" type='reset' onClick="window.location.reload()" >Reset Game</button>
+
+      </div>
+    </div>
+    <script>
+      $("#button1").click(function () {
+        $.ajax({
+          url: "/player1Scored",
+          type: "GET",
+          success: function (result) {
+            console.log("logged player 1 score");
+          }
+        });
+      });
+      $("#button2").click(function () {
+        $.ajax({
+          url: "/player2Scored",
+          type: "GET",
+          success: function (result) {
+            console.log("logged player 2 score");
+          }
+        });
+      });
+      $("#buttonRes").click(function () {
+        $.ajax({
+          url: "/resetGame",
+          type: "PUT",
+          success: function (result) {
+            console.log("reset game");
+          }
+        });
+      });
+    </script>
+
+</body>
+<% include partials/script %>
+
+</html>
